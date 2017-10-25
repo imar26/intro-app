@@ -1,9 +1,9 @@
 <h1>Login</h1>
 
 <label>Username</label>
-<input type="text" placeholder="username" />
+<input [(ngModel)]="username" type="text" placeholder="username" />
 <br/>
 <label>Password</label>
-<input type="password" placeholder="password" />
+<input [(ngModel)]="password" type="password" placeholder="password" />
 <br/>
-<button>Login</button>
+<button (click)="login(username, password)">Login</button>
