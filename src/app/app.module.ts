@@ -10,7 +10,12 @@ import { routing } from './app.routing';
 import { ProfileComponent } from './views/user/profile/profile.component';
 
 import { UserService } from './services/user.service.client';
+import { WidgetService } from './services/widget.service.client';
 import { WebsiteListComponent } from './views/website/website-list/website-list.component';
+
+import { HttpModule } from '@angular/http';
+import { WidgetListComponent } from './views/widget/widget-list/widget-list.component';
+import { WidgetHeadingComponent } from './views/widget/widget-heading/widget-heading.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +23,14 @@ import { WebsiteListComponent } from './views/website/website-list/website-list.
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    WebsiteListComponent
+    WebsiteListComponent,
+    WidgetListComponent,
+    WidgetHeadingComponent
   ],
   imports: [
-    BrowserModule, routing, FormsModule
+    BrowserModule, routing, FormsModule, HttpModule
   ],
-  providers: [UserService],
+  providers: [UserService, WidgetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

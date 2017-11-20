@@ -15,10 +15,12 @@ export class LoginComponent implements OnInit {
 
   	login(username: String, password: String) {
   		// alert('username: '+username);
-  		const user: User = this.userService.findUserByCrendentials(username, password);
-  		if(user) {
-  			this.router.navigate(['/profile/'+user._id]);
-  		}
+  		this.userService.findUserByCrendentials(username, password)
+        .subscribe((user: User) => {
+          if(user) {
+            this.router.navigate(['/profile/'+user._id]);
+          }
+        });
   	}
 
 	ngOnInit() {
