@@ -11,11 +11,14 @@ import { ProfileComponent } from './views/user/profile/profile.component';
 
 import { UserService } from './services/user.service.client';
 import { WidgetService } from './services/widget.service.client';
+import { WebsiteService } from './services/website.service.client';
 import { WebsiteListComponent } from './views/website/website-list/website-list.component';
 
 import { HttpModule } from '@angular/http';
 import { WidgetListComponent } from './views/widget/widget-list/widget-list.component';
 import { WidgetHeadingComponent } from './views/widget/widget-heading/widget-heading.component';
+import { OmdbTestComponent } from './omdb-test/omdb-test.component';
+import { OmdbService } from './services/omdb.service.client';
 
 @NgModule({
   declarations: [
@@ -25,12 +28,13 @@ import { WidgetHeadingComponent } from './views/widget/widget-heading/widget-hea
     ProfileComponent,
     WebsiteListComponent,
     WidgetListComponent,
-    WidgetHeadingComponent
+    WidgetHeadingComponent,
+    OmdbTestComponent
   ],
   imports: [
     BrowserModule, routing, FormsModule, HttpModule
   ],
-  providers: [UserService, WidgetService],
+  providers: [UserService, WidgetService, WebsiteService, OmdbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

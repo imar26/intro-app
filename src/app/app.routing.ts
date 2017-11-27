@@ -5,13 +5,15 @@ import { RegisterComponent } from './views/user/register/register.component';
 import { ProfileComponent } from './views/user/profile/profile.component';
 import { WebsiteListComponent } from './views/website/website-list/website-list.component';
 import { WidgetListComponent } from './views/widget/widget-list/widget-list.component';
+import { OmdbTestComponent } from './omdb-test/omdb-test.component';
 
 const appRoutes: Routes = [
 	{ path : 'login', component: LoginComponent },	
 	{ path : 'register', component: RegisterComponent },	
 	{ path : 'profile/:userId', component: ProfileComponent },	
 	{ path : 'profile/:userId/websites', component: WebsiteListComponent },
-	{ path : 'widget', component: WidgetListComponent }	
+	{ path : 'widget', component: WidgetListComponent },
+	{ path : 'omdb', component: OmdbTestComponent }	
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

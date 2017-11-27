@@ -1,0 +1,9 @@
+<h1>Omdb Test API</h1>>
+
+<label>Movie Title</label>
+<input [(ngModel)]="title" placeholder="Movie Title" />
+<button (click)="searchMovie(title)">Search</button>
+
+<ul *ngFor="let movie of movies">
+  <li>{{movie.Title}}</li>
+</ul>

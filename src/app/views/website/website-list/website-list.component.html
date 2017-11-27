@@ -1,9 +1,15 @@
 <h1>Website List</h1>
 
-{{websites.length}}
+<label>Name</label>
+<input type="text" name="name" placeholder="Name" [(ngModel)]="name" />
+<button (click)="createWebsite(name)">Create Website</button>
+<button (click)="updateWebsite(name)">Update Website</button>
 
 <ul>
 	<li *ngFor="let website of websites">
+		{{website._id}}
 		{{website.name}}
+		<a (click)="selectWebsite(website._id)"><span class="glyphicon glyphicon-cog"></span></a>
+		<a (click)="removeWebsite(website._id)"><span class="glyphicon glyphicon-remove"></span></a>
 	</li>
 </ul>
